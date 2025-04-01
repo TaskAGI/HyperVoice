@@ -13,7 +13,7 @@ Include your API key in all requests:
 Authorization: Bearer YOUR_API_KEY
 
 
-Get your API key from the [TaskAGI dashboard](https://taskagi.net/dashboard).
+Get your API key from [TaskAGI](https://taskagi.net/).
 
 ### Text-to-Speech
 
@@ -39,7 +39,10 @@ Setting context-aware to true will automatically adjust emotion, tone and speed 
     "happy": 0.7,
     "surprise": 0.3
   }
-}```
+}
+```
+
+
 Result:
 ```
 {
@@ -80,7 +83,7 @@ import json
 # TaskAGI HyperVoice V4 API Example
 
 API_KEY = "YOUR_API_KEY"  # Replace with your actual API key
-API_URL = "https://api.taskagi.net/api/hypervoice/v4"
+API_URL = "https://taskagi.net/api/hypervoice/v4"
 
 headers = {
     "Authorization": f"Bearer {API_KEY}",
