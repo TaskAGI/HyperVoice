@@ -1,10 +1,10 @@
-# TaskAGI API Documentation
+# HyperVoice API Documentation
 
-Simple guide to using TaskAGI's APIs.
+HyperVoice V4 is TaskAGI's advanced text-to-speech and voice cloning API that enables you to generate natural-sounding speech from text and clone voices with high fidelity.
 
 ## HyperVoice V4 API
 
-HyperVoice V4 lets you generate realistic speech from text and clone voices.
+HyperVoice V4 lets you generate realistic speech from text and clone voices. It's context aware, meaning our AI will automatically adjust emotion for your text. You can manipulate emotions with pre-defined values as well.
 
 ### Authentication
 
