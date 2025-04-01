@@ -25,14 +25,21 @@ Convert text to speech with various voice options.
 ```json
 {
   "text": "Your text to convert to speech",
+  "voice_name": "peter",
+  "speaking_rate": 15,
+  "context_aware": true,
+}
+```
+Setting context-aware to true will automatically adjust emotion, tone and speed of your speech based on sentiment analysis. You can alternatively set these values yourself: 
+```{
+  "text": "Your text to convert to speech",
   "voice_name": "emma",
   "speaking_rate": 15,
   "emotion": {
     "happy": 0.7,
     "surprise": 0.3
   }
-}
-```
+}```
 Result:
 ```
 {
