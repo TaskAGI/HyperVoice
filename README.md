@@ -51,13 +51,14 @@ Result:
 }
 ```
 
-Voice Cloning
+## Voice Cloning
+
 Clone a voice from an audio sample.
 
 Endpoint: POST /api/hypervoice/v4/voice-clone
 
 
-# Multipart form data with:
+### Multipart form data with:
 text: "Text to speak in the cloned voice"
 speaker_audio: [AUDIO FILE]
 speaking_rate: 15
