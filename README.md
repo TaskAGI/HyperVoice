@@ -160,3 +160,71 @@ if __name__ == "__main__":
     #     "This is my cloned voice speaking through TaskAGI's HyperVoice API.",
     #     "path/to/your/voice-sample.mp3"
     # )
+
+```
+# HyperVoice V3 Text-to-Speech API
+
+This endpoint allows you to generate speech from text using our V3 voices.
+
+**Important:** Please use our V3 API primarily as a fallback when the V4 API is undergoing maintenance. This V3 endpoint is generally faster than V4, making it more suitable for agentic use cases and real-time applications where lower latency is critical.
+
+**Endpoint:**
+
+```
+GET https://taskagi.net/api/hypervoice/text-to-speech
+```
+
+**Authentication:**
+
+Requires a valid TaskAGI API token sent as a Bearer token in the `Authorization` header.
+
+```http
+Authorization: Bearer YOUR_TaskAGI_API_TOKEN
+```
+
+**Query Parameters:**
+
+| Parameter  | Type    | Required | Description                                                                                                                               |
+| :--------- | :------ | :------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| `gen_text` | string  | Yes      | The text you want to convert to speech.                                                                                                   |
+| `actor`    | string  | Yes      | The voice actor name **prefixed with `v3_`**. |
+| `speed`    | numeric | No       | The desired speech speed. A value between 0.1 and 2.0. Defaults to `1.0` if not provided.                                                |
+
+**Example Request (using cURL):**
+
+```bash
+curl -X GET "https://taskagi.net/api/hypervoice/text-to-speech?gen_text=Hello%2C%20this%20is%20a%20test.&actor=v3_af_alloy&speed=1.1" \
+     -H "Authorization: Bearer YOUR_TaskAGI_API_TOKEN" \
+     -H "Accept: application/json"
+```
+
+**Success Response (200 OK):**
+
+The API returns a JSON object containing the URL to the generated audio file. The audio file might be enhanced if the enhancement service is enabled and successful.
+
+```json
+{
+  "message": "TTS generated successfully.",
+  "audio_url": "https://taskagi.net/storage/resources/audio/generated_audio_filename.mp3"
+}
+```
+
+**Error Responses:**
+
+*   **400 Bad Request:** Returned if the `actor` parameter does not start with `v3_`.
+    ```json
+    {
+        "error": "Invalid actor format. Only v3 actors are supported."
+    }
+    ```
+*   **422 Unprocessable Entity:** Returned if validation fails (e.g., missing `gen_text` or `actor`).
+    ```json
+    {
+        "errors": {
+            "gen_text": [
+                "The gen text field is required."
+            ]
+        }
+    }
+    ```
+
