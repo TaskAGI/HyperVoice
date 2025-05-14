@@ -197,6 +197,19 @@ curl -X GET "https://taskagi.net/api/hypervoice/text-to-speech?gen_text=Hello%2C
      -H "Authorization: Bearer YOUR_TaskAGI_API_TOKEN" \
      -H "Accept: application/json"
 ```
+*** Available actors for V3 model ***
+- V3_af_alloy
+- V3_af_aoede
+- V3_af_bella
+- V3_af_jessica
+- V3_af_kore
+- V3_af_nicole
+- V3_af_nova
+- V3_af_river
+- V3_af_sarah
+- V3_af_sky
+- V3_am_adam
+- V3_am_echo
 
 **Success Response (200 OK):**
 
